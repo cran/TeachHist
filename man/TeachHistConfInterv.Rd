@@ -5,7 +5,7 @@
 \title{Histogram to Visualize Confidence Intervalls}
 \usage{
 TeachHistConfInterv(
-  Mean = 0,
+  SampleMean = 0,
   StandardError = 1,
   DegreeFreedom = NULL,
   Confidence = 0.95,
@@ -13,21 +13,23 @@ TeachHistConfInterv(
   IsSdEstimated = FALSE,
   NOfSimData = 10000,
   XAxisMax = 5,
+  AxisFontSize = 10,
   LabelSize = 3,
   BinWidth = 0.5,
   PrintDensities = FALSE,
   PrintRelFreq = TRUE,
   PlotNormCurv = TRUE,
   RandVarName = "Means",
-  SeedValue = NULL
+  SeedValue = NULL,
+  Mean = NULL
 )
 }
 \arguments{
-\item{Mean}{(default=0) Value for sample mean.}
+\item{SampleMean}{(default=0) Value for sample mean.}
 
 \item{StandardError}{(default=1) Standard error from sample.}
 
-\item{DegreeFreedom}{(default=NULL) required for t-test (IsSdEstimated=TRUE)}
+\item{DegreeFreedom}{(default=NULL) required for t-test (when IsSdEstimated=TRUE)}
 
 \item{Confidence}{(default=0.95) Confidence level.}
 
@@ -39,32 +41,36 @@ TeachHistConfInterv(
 
 \item{XAxisMax}{(default=5) X-axis ranges from negative to positive XAxisMax. If XAxisMax is not high enough, some of the simulated points might not be considered.}
 
+\item{AxisFontSize}{(default=10) Font size for axis labels.}
+
 \item{LabelSize}{(default=3) Size of the labels inside the diagram.}
 
 \item{BinWidth}{(default= 0.5) BinWidth expressed in standard deviations.}
 
 \item{PrintDensities}{(default=FALSE) Set PrintDensities=TRUE to print densities in the histogram.}
 
-\item{PrintRelFreq}{(default=TRUE) Set PrintRelFreq=FALSE to supress the printing of relative frequencies in the histogram.}
+\item{PrintRelFreq}{(default=TRUE) Set PrintRelFreq=FALSE to suppress the printing of relative frequencies in the histogram.}
 
 \item{PlotNormCurv}{(default=TRUE) If TRUE normal curve is plotted}
 
 \item{RandVarName}{(default="Means") Variable name that is plotted in histogram at x-axis.}
 
-\item{SeedValue}{(default=NULL) Can be any integer and makes simulated points reproduceable.}
+\item{SeedValue}{(default=NULL) Can be any integer and makes simulated points reproducible.}
+
+\item{Mean}{(default=NULL) Value for sample mean. Depreciated. Use SampleMean instead.}
 }
 \value{
 Returns a histogram with confidence interval
 }
 \description{
 The TeachHistConfInterv function is a variation of the TeachHistDens function of this package. It generates a histogram with two horizontal axis. One axis displays z-values the other one the
-dimension of the displayed variable and it is optimized to visualize confidence intervalls.
+dimension of the displayed variable and it is optimized to visualize confidence intervals.
 }
 \details{
 The TeachHistConfInterv function supports confidence intervals based on the t-distribution (IsSdEstimated=TRUE) and the z-distribution (IsSdEstimated=FALSE).
 }
 \examples{
 TeachHistConfInterv()
-TeachHistConfInterv(Mean=2, StandardError=0.2,  IsSdEstimated = FALSE)
-TeachHistConfInterv(Mean=2, StandardError=0.2, DegreeFreedom = 35,  IsSdEstimated = TRUE)
+TeachHistConfInterv(SampleMean=2, StandardError=0.2,  IsSdEstimated = FALSE)
+TeachHistConfInterv(SampleMean=2, StandardError=0.2, DegreeFreedom = 35,  IsSdEstimated = TRUE)
 }

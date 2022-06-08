@@ -14,6 +14,7 @@ TeachHistHypTest(
   IsSdEstimated = FALSE,
   NOfSimData = 10000,
   XAxisMax = 5,
+  AxisFontSize = 10,
   LabelSize = 3,
   BinWidth = 0.5,
   PrintDensities = FALSE,
@@ -42,19 +43,21 @@ TeachHistHypTest(
 
 \item{XAxisMax}{(default=5) X-axis ranges from negative to positive XAxisMax. If XAxisMax is not high enough, some of the simulated points might not be considered.}
 
+\item{AxisFontSize}{(default=10) Font size for axis labels.}
+
 \item{LabelSize}{(default=3) Size of the labels inside the diagram.}
 
-\item{BinWidth}{(default= 0.5) BinWidth expressed in standard deviations.}
+\item{BinWidth}{(default= 0.51) BinWidth expressed in standard deviations.}
 
 \item{PrintDensities}{(default=FALSE) Set PrintDensities=TRUE to print densities in the histogram.}
 
-\item{PrintRelFreq}{(default=TRUE) Set PrintRelFreq=FALSE to supress the printing of relative frequencies in the histogram.}
+\item{PrintRelFreq}{(default=TRUE) Set PrintRelFreq=FALSE to suppress the printing of relative frequencies in the histogram.}
 
 \item{PlotNormCurv}{(default=TRUE) If TRUE normal curve is plotted}
 
 \item{RandVarName}{(default="Means") Variable name that is plotted in histogram at x-axis.}
 
-\item{SeedValue}{(default=NULL) Can be any integer and makes simulated points reproduceable.}
+\item{SeedValue}{(default=NULL) Can be any integer and makes simulated points reproducible.}
 }
 \value{
 Returns a histogram

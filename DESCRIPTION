@@ -2,7 +2,7 @@ Package: TeachHist
 Type: Package
 Title: A Collection of Amended Histograms Designed for Teaching
         Statistics
-Version: 0.1.2
+Version: 0.2.0
 Authors@R: person("Carsten", "Lange", email = "clange@cpp.edu",
                   role = c("aut", "cre"))
 Maintainer: Carsten Lange <clange@cpp.edu>
@@ -19,9 +19,9 @@ Description: Statistics students often have problems understanding
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.5.0), ggplot2, dplyr
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.0
 NeedsCompilation: no
-Packaged: 2021-04-06 17:15:22 UTC; clange
+Packaged: 2022-06-08 23:45:56 UTC; clange
 Author: Carsten Lange [aut, cre]
 Repository: CRAN
-Date/Publication: 2021-04-08 07:50:05 UTC
+Date/Publication: 2022-06-09 00:00:02 UTC

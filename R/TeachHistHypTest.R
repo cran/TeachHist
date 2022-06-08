@@ -15,14 +15,14 @@
 #' @param IsSdEstimated  (default=FALSE) standard deviation or standard error are known. Set to FALSE, if estimated.
 #' @param NOfSimData  (default=10000) Number of simulated data points. Higher NOfSimData results in better precision but possibly not all points are considered.
 #' @param XAxisMax  (default=5) X-axis ranges from negative to positive XAxisMax. If XAxisMax is not high enough, some of the simulated points might not be considered.
+#' @param AxisFontSize (default=10) Font size for axis labels.
 #' @param LabelSize  (default=3) Size of the labels inside the diagram.
-#' @param BinWidth  (default= 0.5) BinWidth expressed in standard deviations.
+#' @param BinWidth  (default= 0.51) BinWidth expressed in standard deviations.
 #' @param PrintDensities  (default=FALSE) Set PrintDensities=TRUE to print densities in the histogram.
-#' @param PrintRelFreq  (default=TRUE) Set PrintRelFreq=FALSE to supress the printing of relative frequencies in the histogram.
+#' @param PrintRelFreq  (default=TRUE) Set PrintRelFreq=FALSE to suppress the printing of relative frequencies in the histogram.
 #' @param PlotNormCurv  (default=TRUE) If TRUE normal curve is plotted
 #' @param RandVarName  (default="Means") Variable name that is plotted in histogram at x-axis.
-#' @param NOfSimData  (default=10000) Number of simulated data points. Higher NOfSimData results in better precision but possibly not all points are considered.
-#' @param SeedValue  (default=NULL) Can be any integer and makes simulated points reproduceable.
+#' @param SeedValue  (default=NULL) Can be any integer and makes simulated points reproducible.
 #' @return Returns a histogram
 #' @importFrom ggplot2 ggplot stat_function geom_segment geom_histogram aes scale_x_continuous scale_y_continuous xlab labs geom_vline geom_text
 #' @importFrom graphics plot
@@ -44,6 +44,7 @@ TeachHistHypTest<- function(
   IsSdEstimated=FALSE,
   NOfSimData=10000,
   XAxisMax=5,
+  AxisFontSize=10,
   LabelSize=3,
   BinWidth=0.5, #in sd
   PrintDensities=FALSE,
@@ -122,7 +123,9 @@ ClPlot=ggplot2::ggplot(PlotData, ggplot2::aes(x=.data[[FirstColName]]))+
                      limits = c(min(NullHyp-XAxisMax*StandardError,SampleMean),max(NullHyp+XAxisMax*StandardError,SampleMean)),
                      expand = c(0,0)
                      )+
-  ggplot2::scale_y_continuous(expand = c(0,0,0.05,0))
+  ggplot2::scale_y_continuous(expand = c(0,0,0.05,0))+
+  ggplot2::theme(axis.text = ggplot2::element_text(size = AxisFontSize))+
+  ggplot2::theme(axis.title = ggplot2::element_text(size = AxisFontSize))
 
 if(PrintRelFreq)
 {
@@ -176,5 +179,5 @@ ClPlot=ClPlot+
     geom_vline(xintercept = SampleMean, color="blue",size=2)+
   geom_point(data=data.frame(NullHyp=NullHyp,YPoint=0),ggplot2::aes(NullHyp,YPoint),colour="black",size=5, shape = 17)
 
-plot(ClPlot)
+suppressWarnings(plot(ClPlot))
 }

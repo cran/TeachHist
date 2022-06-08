@@ -10,8 +10,10 @@ TeachHistCounts(
   PlotData = dplyr::tibble(x = c(0)),
   VLine1 = NULL,
   VLine2 = NULL,
-  BinWidth = 0.5,
+  BinWidth = 1,
   XAxisMax = 5,
+  PrintZAxis = TRUE,
+  AxisFontSize = 10,
   LabelSize = 3,
   NOfSimData = 1000,
   SeedValue = NULL,
@@ -30,17 +32,21 @@ If PlotData is not set, the data for the histogram will be simulated based on th
 
 \item{VLine2}{(default=NA) A value for the simulated variable resulting in a vertical line at related x-axis position (can be se by user. E.g. upper boundary of conf intervall).}
 
-\item{BinWidth}{(default=0.5) Bin width expressed in standard deviations.}
+\item{BinWidth}{(default=1) Bin width expressed in standard deviations.}
 
 \item{XAxisMax}{(default=5) X-axis ranges from negative to positive XAxisMax. If XAxisMax is not high enough, some of the simulated points might not be considered.}
 
+\item{PrintZAxis}{(default=TRUE) TRUE adds a second axis with z values. FALSE suppresses z axis and plots only axis with original values.}
+
+\item{AxisFontSize}{(default=10) Font size for axis labels.}
+
 \item{LabelSize}{(default=3) Size of the labels inside the diagram.}
 
-\item{NOfSimData}{(default=100000) Number of simulated data points. Higher NOfSimData results in better precision but possibly not all points are considered.}
+\item{NOfSimData}{(default=1000) Number of simulated data points. Higher NOfSimData results in better precision but possibly not all points are considered.}
 
-\item{SeedValue}{(default=NULL) Can be any integer and makes simulated points reproduceable.}
+\item{SeedValue}{(default=NULL) Can be any integer and makes simulated points reproducible.}
 
-\item{PrintCounts}{(default=TRUE) Set PrintCounts=FALSE to supress the printing of relative frequencies in the histogram.}
+\item{PrintCounts}{(default=TRUE) Set PrintCounts=FALSE to suppress the printing of counts in the histogram.}
 }
 \value{
 Returns a histogram

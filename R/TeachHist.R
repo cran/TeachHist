@@ -2,7 +2,7 @@
 #'
 #' Statistics students often have problems understanding
 #' the relation between a random variable's true scale and its z-values.
-#' To allow instructors to better better visualize histograms for these
+#' To allow instructors to better visualize histograms for these
 #' students, the package provides histograms with two horizontal
 #' axis containing z-values and the true scale of the variable.
 #' The function TeachHistDens() provides a density histogram with two axis.
