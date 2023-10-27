@@ -3,6 +3,7 @@
 \docType{package}
 \name{TeachHist}
 \alias{TeachHist}
+\alias{TeachHist-package}
 \title{TeachHist: A Collection of Amended Histograms Designed for Teaching Statistics}
 \description{
 Statistics students often have problems understanding

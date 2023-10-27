@@ -27,5 +27,6 @@
 #' Carsten Lange (clange@cpp.edu)
 #' @docType package
 #' @name TeachHist
+#' @aliases TeachHist-package
 NULL
 #> NULL
